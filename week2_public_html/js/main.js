@@ -11,7 +11,7 @@ const getCat = async () => {
     <li>
         <h2>${cat.name}</h2>
         <figure>
-            <img src="${cat.filename}" class="resp">
+            <img src="/uploads/${cat.filename}" class="resp">
         </figure>
         <p>Age: ${cat.age}</p>
         <p>Weight: ${cat.weight}kg</p>

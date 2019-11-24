@@ -30,7 +30,17 @@ const getAllCats = async () => {
   }   
 };
 
+const getCat = async (id) => {
+  try {
+    const [rows] = await promisePool.query('SELECT * FROM cats WHERE id = $id', [id])
+    return rows  
+} catch(e) {
+    console.log('error', e.message)
+  }
+}
+
 module.exports = {
   cats,
+  getCat,
   getAllCats,
 };

@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('./week2_public_html'))
+app.use('/uploads', express.static('./uploads'))
 
 app.use(cors());
 
@@ -19,7 +20,7 @@ app.use('/cat', catRoute);
 app.use('/user', userRoute);
 
 app.use('/', (req, res) => {
-  res.sendFile('./week2_public_html/index.html');
+  res.sendfile('./week2_public_html/index.html');
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
