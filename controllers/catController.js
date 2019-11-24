@@ -2,9 +2,10 @@
 const catModel = require('../models/catModel');
 
 const cats = catModel.cats;
+const getCats = catModel.getAllCats;
 
-
-const cat_list_get = (req, res) => {
+const cat_list_get = async (req, res) => {
+    const cats = await getCats();
     res.json(cats);
 };
 
